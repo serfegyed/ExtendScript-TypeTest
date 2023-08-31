@@ -18,6 +18,8 @@
  *  isRegExp()    	- Tests if a passed data is RegExp
  *  isIterable()    - Checks if an object is iterable.
  *  isCallable()    - Determines if a given value is callable.
+ *  isLetter()      - Tests if a passed data is a letter
+ *  isDigit()     	- Tests if a passed data is a digit 
  *
  *******************************************************************************/
 
@@ -203,4 +205,24 @@ function isIterable(obj) {
  */
 function isCallable(func) {
     return (func instanceof Object) && (func.reflect.find('call'))
+};
+
+/**
+ * Checks if a character is a letter.
+ *
+ * @param {string} chr - The character to check.
+ * @return {boolean} Returns true if the character is a letter, otherwise returns false.
+ */
+function isLetter(chr) {
+    return /[a-zA-ZÀ-ÖØ-öø-ž]/.test(chr);
+};
+
+/**
+ * Checks whether the given character is a digit.
+ *
+ * @param {string} chr - The character to be checked.
+ * @return {boolean} True if the character is a digit, false otherwise.
+ */
+function isDigit(chr) {
+    return /[0-9]/.test(chr);
 };
